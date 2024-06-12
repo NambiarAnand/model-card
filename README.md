@@ -7,79 +7,60 @@
 - **License:** 
 - **Finetuned from model:** ORPO, SFT, DPO
 
-### Model Sources [optional]
-
-<!-- Provide the basic links for the model. -->
-
-- **Repository:**
-- **Paper:** 
-
 ## Uses
 
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
+The SQL Coder model is designed to assist users in generating, optimizing, and understanding SQL queries. Leveraging advanced machine learning techniques, the model provides accurate and efficient SQL code solutions based on user inputs, making it an invaluable tool for both novice and experienced database administrators, developers, and data analysts.
 
 ### Direct Use
 
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
+Efficiently generate, optimize, and debug SQL queries from natural language descriptions, enhancing productivity and query performance for developers and data analysts.
 
-{{ direct_use | default("[More Information Needed]", true)}}
+### Downstream Use
 
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-{{ downstream_use | default("[More Information Needed]", true)}}
+Enhance database management, improve data retrieval speed, support advanced data analysis, and aid in learning SQL by providing clear explanations and optimized query solutions.
 
 ### Out-of-Scope Use
 
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
-
-{{ out_of_scope_use | default("[More Information Needed]", true)}}
+Out of scope uses for the SQL Coder model include generating SQL queries for unsupported or non-relational databases, performing complex database administration tasks such as backup and restore, providing comprehensive data visualization and reporting tools, and writing application-specific business logic outside of SQL queries.
 
 ## Bias, Risks, and Limitations
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-{{ bias_risks_limitations | default("[More Information Needed]", true)}}
 
 ### Recommendations
 
 <!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
-{{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
-
 ## How to Get Started with the Model
 
 Use the code below to get started with the model.
 
-{{ get_started_code | default("[More Information Needed]", true)}}
+
 
 ## Training Details
 
 ### Training Data
-
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
-
-{{ training_data | default("[More Information Needed]", true)}}
-
-### Training Procedure
-
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
-
-#### Preprocessing [optional]
-
-{{ preprocessing | default("[More Information Needed]", true)}}
-
+In our analysis and experiments, we employ various SQL datasets. These datasets serve as valuable resources for training and evaluating text-to-SQL models, facilitating a deeper comprehension of query types and SQL syntax.Individual Dataset Information
+- Text2SQL
+- b-mc2/sql-create-context
+- Clinton/Text-to-sql-v1
+- zerolink/zsql-sqlite-dpo
+- xlangai/spider
+- PipableAI/pip-txt-to-sql-spider-bird-dataset
+- gretelai/synthetic_text_to_sql
+- NumbersStation/NSText2SQL
 
 #### Training Hyperparameters
 
-- **Training regime:** {{ training_regime | default("[More Information Needed]", true)}} <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
+- **Total Entries:** 15,50,168
+- **Self Join:** 2,76,296
+- **Left Join Understanding:** 18,794
+- **Case statement:** 20,148
+- **Window Function:** 2297
+- **User Defined Function:** 336
 
-#### Speeds, Sizes, Times [optional]
+#### Speeds, Sizes, Times
 
 <!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-{{ speeds_sizes_times | default("[More Information Needed]", true)}}
 
 ## Evaluation
 
@@ -89,56 +70,19 @@ Use the code below to get started with the model.
 
 #### Testing Data
 
-<!-- This should link to a Dataset Card if possible. -->
-
-{{ testing_data | default("[More Information Needed]", true)}}
-
-#### Factors
-
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
-
-{{ testing_factors | default("[More Information Needed]", true)}}
-
 #### Metrics
-
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
-
-{{ testing_metrics | default("[More Information Needed]", true)}}
 
 ### Results
 
-{{ results | default("[More Information Needed]", true)}}
+From our evaluation these base models were performing pretty well and hence fine tuning them will necessarily improve their performance
 
 #### Summary
 
-{{ results_summary | default("", true) }}
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-{{ model_examination | default("[More Information Needed]", true)}}
-
-## Technical Specifications [optional]
+The SQL Coder model has been fine-tuned using techniques such as SFT, DPO, ORPO, and DNO. By creating our own dataset and incorporating benchmarking datasets, we achieved results on par with other leading models. This advanced model efficiently generates, optimizes, and debugs SQL queries, significantly enhancing productivity and query performance for developers and data analysts.
 
 ### Model Architecture and Objective
 
-{{ model_specs | default("[More Information Needed]", true)}}
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-{{ glossary | default("[More Information Needed]", true)}}
-
-## More Information [optional]
-
-{{ more_information | default("[More Information Needed]", true)}}
-
 ## Model Card Authors [optional]
 
-{{ model_card_authors | default("[More Information Needed]", true)}}
+Cynaptics Club, IIT Indore
 
-## Model Card Contact
-
-{{ model_card_contact | default("[More Information Needed]", true)}}
